@@ -95,7 +95,5 @@ cd LuxeLane
 ### Search & Filtering
 ![LuxeLane Search](client/public/screenshots/search_results.png)
 
-### Shopping Cart
-![LuxeLane Cart](client/public/screenshots/cart_page.png)
 
 
