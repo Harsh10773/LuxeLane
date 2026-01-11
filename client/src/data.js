@@ -213,7 +213,7 @@ export const products = [
     {
         _id: '6',
         name: 'Instant Pot Duo 7-in-1',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?auto=format&fit=crop&w=600&q=80',
         description: 'Electric Pressure Cooker, Slow Cooker, Rice Cooker.',
         price: 79.95,
         oldPrice: 99.99,

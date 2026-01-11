@@ -88,7 +88,14 @@ cd LuxeLane
    ```
 
 ## 📸 Screenshots
-*(Add screenshots of your Home, Search, and Cart screens here)*
 
-## 📄 License
-This project is licensed under the MIT License.
+### Home Page
+![LuxeLane Home](client/public/screenshots/homepage.png)
+
+### Search & Filtering
+![LuxeLane Search](client/public/screenshots/search_results.png)
+
+### Shopping Cart
+![LuxeLane Cart](client/public/screenshots/cart_page.png)
+
+
