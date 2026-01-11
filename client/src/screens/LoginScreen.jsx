@@ -1,49 +1,106 @@
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const LoginScreen = () => {
-    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [isRegister, setIsRegister] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleLogin = (e) => {
+    const { login, register, userInfo } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const redirect = location.search ? location.search.split('=')[1] : '/';
+
+    useEffect(() => {
+        if (userInfo) {
+            navigate(redirect);
+        }
+    }, [navigate, userInfo, redirect]);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Mock login
-        navigate('/');
+        setError('');
+        try {
+            if (isRegister) {
+                await register(name, email, password);
+            } else {
+                await login(email, password);
+            }
+        } catch (err) {
+            setError(err);
+        }
     };
 
     return (
-        <div className="min-h-screen bg-white flex flex-col items-center pt-10">
-            <h1 className="text-3xl font-black tracking-tight mb-6">LUXELANE</h1>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
+                <div>
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                        {isRegister ? 'Create your account' : 'Sign in to your account'}
+                    </h2>
+                </div>
+                {error && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <span className="block sm:inline">{error}</span>
+                    </div>
+                )}
+                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+                    <div className="rounded-md shadow-sm -space-y-px">
+                        {isRegister && (
+                            <div>
+                                <input
+                                    type="text"
+                                    required
+                                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                                    placeholder="Full Name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                        )}
+                        <div>
+                            <input
+                                type="email"
+                                required
+                                className={`appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ${isRegister ? '' : 'rounded-t-md'} focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm`}
+                                placeholder="Email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="password"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                    </div>
 
-            <div className="w-full max-w-[350px] border rounded-lg p-6 shadow-sm">
-                <h2 className="text-2xl font-normal mb-4">Sign in</h2>
-                <form onSubmit={handleLogin} className="space-y-4">
                     <div>
-                        <label className="block text-sm font-bold mb-1">Email or mobile phone number</label>
-                        <input type="email" className="w-full border rounded px-3 py-1.5 focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)] focus:border-[#e77600] outline-none transition-shadow" />
+                        <button
+                            type="submit"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        >
+                            {isRegister ? 'Register' : 'Sign In'}
+                        </button>
                     </div>
-                    <div>
-                        <label className="block text-sm font-bold mb-1">Password</label>
-                        <input type="password" className="w-full border rounded px-3 py-1.5 focus:shadow-[0_0_3px_2px_rgba(228,121,17,0.5)] focus:border-[#e77600] outline-none transition-shadow" />
-                    </div>
-                    <button className="w-full bg-yellow-400 hover:bg-yellow-500 border border-yellow-600 rounded-sm py-1.5 text-sm shadow-sm font-medium">
-                        Sign in
-                    </button>
                 </form>
 
-                <p className="text-xs text-gray-600 mt-4 leading-normal">
-                    By continuing, you agree to LuxeLane's <span className="text-blue-600 hover:underline cursor-pointer">Conditions of Use</span> and <span className="text-blue-600 hover:underline cursor-pointer">Privacy Notice</span>.
-                </p>
-
-                <div className="relative mt-6 mb-4">
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-gray-300"></div>
-                    </div>
-                    <div className="relative flex justify-center text-sm">
-                        <span className="px-2 bg-white text-gray-500">New to LuxeLane?</span>
-                    </div>
-                </div>
-
-                <div className="w-full bg-gray-50 border hover:bg-gray-100 border-gray-300 rounded shadow-sm py-1.5 text-sm font-medium text-center cursor-pointer">
-                    Create your LuxeLane account
+                <div className="text-center">
+                    <button
+                        onClick={() => setIsRegister(!isRegister)}
+                        className="text-blue-600 hover:underline text-sm"
+                    >
+                        {isRegister ? 'Already have an account? Sign In' : "Don't have an account? Register"}
+                    </button>
                 </div>
             </div>
         </div>

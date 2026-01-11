@@ -27,6 +27,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 app.use(express.json());
 app.use(cors());
 
+import userRoutes from './routes/userRoutes.js';
+app.use('/api/users', userRoutes);
+
 // --- ROUTES ---
 
 // Health Check

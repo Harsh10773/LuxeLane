@@ -26,12 +26,12 @@ const CartScreen = () => {
                     ) : (
                         <div className="space-y-6">
                             {cartItems.map((item) => (
-                                <div key={item.product} className="flex flex-col sm:flex-row gap-4 border-b pb-6 last:border-none">
+                                <div key={item._id} className="flex flex-col sm:flex-row gap-4 border-b pb-6 last:border-none">
                                     <div className="w-full sm:w-48 h-48 flex-shrink-0">
                                         <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                     </div>
                                     <div className="flex-grow">
-                                        <Link to={`/product/${item.product}`} className="text-lg font-medium hover:text-blue-600 hover:underline line-clamp-2">
+                                        <Link to={`/product/${item._id}`} className="text-lg font-medium hover:text-blue-600 hover:underline line-clamp-2">
                                             {item.name}
                                         </Link>
                                         <div className="text-sm text-green-600 mt-1">In Stock</div>
@@ -52,7 +52,7 @@ const CartScreen = () => {
                                             </div>
                                             <div className="h-4 border-l border-gray-300"></div>
                                             <button
-                                                onClick={() => removeFromCart(item.product)}
+                                                onClick={() => removeFromCart(item._id)}
                                                 className="text-sm text-blue-600 hover:underline"
                                             >
                                                 Delete

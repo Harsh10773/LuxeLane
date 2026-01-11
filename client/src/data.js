@@ -1,5 +1,5 @@
 export const categories = [
-    { name: "Electronics", icon: "FiMonitor", image: "https://images.unsplash.com/photo-1498049860654-af1a5c5668ba?auto=format&fit=crop&w=300&q=80" },
+    { name: "Electronics", icon: "FiMonitor", image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=300&q=80" },
     { name: "Fashion", icon: "FiShoppingBag", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=300&q=80" },
     { name: "Home", icon: "FiHome", image: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=300&q=80" },
     { name: "Beauty", icon: "FiHeart", image: "https://images.unsplash.com/photo-1596462502278-27bfdd403348?auto=format&fit=crop&w=300&q=80" },
@@ -13,7 +13,7 @@ export const offers = [
         title: "Great Summer Sale",
         description: "Up to 80% Off on Fashion",
         image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80",
-        bg: "bg-gradient-to-r from-pink-500 to-rose-500",
+        bg: "bg-gray-900"
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ export const products = [
     {
         _id: '1',
         name: 'Sony WH-1000XM5 Wireless Headphones',
-        image: 'https://images.unsplash.com/photo-1616164295488-820894ba7a8c?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=600&q=80',
         description: 'Industry-leading noise canceling headphones with Auto NC Optimizer.',
         price: 348.00,
         oldPrice: 399.99,
@@ -110,7 +110,7 @@ export const products = [
     {
         _id: '9',
         name: 'Apple iPhone 15 Pro (256 GB)',
-        image: 'https://images.unsplash.com/photo-1695048180490-30edcf300264?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&w=600&q=80',
         description: 'Titanium design. Ceramic Shield front. A17 Pro chip.',
         price: 1099.00,
         rating: 4.8,
@@ -134,7 +134,7 @@ export const products = [
     {
         _id: '13',
         name: 'Google Pixel 8 Pro',
-        image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff23?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1698240578854-3e99479b1836?auto=format&fit=crop&w=600&q=80',
         description: 'The most advanced Pixel camera and Google AI.',
         price: 999.00,
         rating: 4.6,
@@ -145,7 +145,7 @@ export const products = [
     {
         _id: '14',
         name: 'OnePlus 12 5G',
-        image: 'https://images.unsplash.com/photo-1592665113943-4cb503289025?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?auto=format&fit=crop&w=600&q=80',
         description: 'Smooth beyond belief. Snapdragon 8 Gen 3.',
         price: 799.00,
         rating: 4.5,
@@ -157,7 +157,7 @@ export const products = [
     {
         _id: '3',
         name: 'Nike Air Jordan 1 Retro',
-        image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80',
         description: 'Classic high-top sneakers with premium leather.',
         price: 180.00,
         oldPrice: 200.00,
@@ -190,7 +190,7 @@ export const products = [
     {
         _id: '17',
         name: 'Adidas Ultraboost Light',
-        image: 'https://images.unsplash.com/photo-1587563871167-1ee9c731aef4?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=600&q=80',
         description: 'Lightest Ultraboost ever made.',
         price: 190.00,
         rating: 4.8,
@@ -213,7 +213,7 @@ export const products = [
     {
         _id: '6',
         name: 'Instant Pot Duo 7-in-1',
-        image: 'https://images.unsplash.com/photo-1544233726-284691db686e?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=600&q=80',
         description: 'Electric Pressure Cooker, Slow Cooker, Rice Cooker.',
         price: 79.95,
         oldPrice: 99.99,
@@ -236,7 +236,7 @@ export const products = [
     {
         _id: '19',
         name: 'Philips Hue Smart Bulb',
-        image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1558554916-d34e945c58ee?auto=format&fit=crop&w=600&q=80',
         description: 'White and color ambiance LED bulb.',
         price: 49.99,
         rating: 4.6,
@@ -246,7 +246,7 @@ export const products = [
     {
         _id: '20',
         name: 'Nespresso Vertuo Coffee',
-        image: 'https://images.unsplash.com/photo-1517088455884-b31751d20d7d?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=600&q=80',
         description: 'Coffee and espresso machine by De\'Longhi.',
         price: 159.00,
         rating: 4.7,
@@ -258,7 +258,7 @@ export const products = [
     {
         _id: '21',
         name: 'Dyson Airwrap Multi-Styler',
-        image: 'https://images.unsplash.com/photo-1625476483662-3cb58af2570d?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80',
         description: 'Style your hair with air, not extreme heat.',
         price: 599.00,
         rating: 4.8,
@@ -269,7 +269,7 @@ export const products = [
     {
         _id: '22',
         name: 'La Mer Moisturizing Cream',
-        image: 'https://images.unsplash.com/photo-1612817288484-929134704271?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
         description: 'Luxury daily moisturizer.',
         price: 190.00,
         rating: 4.9,
@@ -314,7 +314,7 @@ export const products = [
     {
         _id: '25',
         name: 'LG French Door Refrigerator',
-        image: 'https://images.unsplash.com/photo-1584622050111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1571175443880-49e1d58b794a?auto=format&fit=crop&w=600&q=80',
         description: 'Smart wi-fi enabled refrigerator.',
         price: 2199.00,
         rating: 4.5,
