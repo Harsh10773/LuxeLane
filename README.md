@@ -3,7 +3,7 @@
 LuxeLane is a sophisticated, full-stack MERN (MongoDB, Express, React, Node.js) e-commerce application designed with a premium aesthetic and modern user experience. It features a robust product catalog, dynamic searching and filtering, a functional shopping cart, secure JWT authentication, and Stripe payment integration.
 
 ## 🚀 Live Demo
-*(Insert your deployment link here if applicable)*
+[luxelanebuy.netlify.app](https://luxelanebuy.netlify.app/)
 
 ## ✨ Key Features
 
